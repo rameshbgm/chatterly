@@ -3,12 +3,20 @@
 # =========================
 # DISCORD CONFIG
 # =========================
-DISCORD_BOT_TOKEN = "KEY"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# =========================
+# DISCORD CONFIG
+# =========================
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 # =========================
 # OPENAI CONFIG
 # =========================
-OPENAI_API_KEY = "KEY"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = "gpt-4o-mini"
 
 TEMPERATURE = 0.7
