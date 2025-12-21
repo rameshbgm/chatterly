@@ -1,0 +1,4 @@
+discord.py==2.6.4
+certifi==2024.2.2
+openai>=1.56.0
+audioop-lts
