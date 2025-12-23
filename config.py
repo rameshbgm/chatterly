@@ -19,7 +19,7 @@ DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = "gpt-4o-mini"
 
-TEMPERATURE = 0.7
+TEMPERATURE = 0.9
 MAX_TOKENS = 500
 
 # =========================

@@ -1,0 +1,9 @@
+
+
+services:
+  chatterly-bot:
+    build: .
+    container_name: chatterly_bot
+    restart: always
+    env_file:
+      - .env
