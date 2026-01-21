@@ -2,95 +2,117 @@
 
 Chatterly is a friendly, engaging Discord bot powered by OpenAI's GPT models. It maintains conversation history per user to provide context-aware responses.
 
-## 📋 Prerequisites
+You can run this bot in two ways:
 
-Before you begin, ensure you have the following installed on your system:
-
-### 1. Python
-You need Python installed to run this bot.
-- **Download Python**: [https://www.python.org/downloads/](https://www.python.org/downloads/)
-- *Note:* During installation on Windows, ensure you check the box **"Add Python to PATH"**.
-
-### 2. Visual Studio Code (VS Code)
-Recommended code editor for this project.
-- **Download VS Code**: [https://code.visualstudio.com/docs/setup/setup-overview](https://code.visualstudio.com/docs/setup/setup-overview)
+1. **[Option 1: GitHub Codespaces (Cloud)](#option-1-%EF%B8%8F-running-in-github-codespaces)** - fast, no installation needed.
+2. **[Option 2: Local Machine (PC/Mac)](#option-2-%F0%9F%96%A5%EF%B8%8F-running-locally-pcmac)** - requires Python installation.
 
 ---
 
-## 🚀 Installation & Setup
+## Option 1: ☁️ Running in GitHub Codespaces
 
-Follow these steps to get the bot running on your local machine.
+Run the project instantly in the cloud. Codespaces automatically sets up the environment for you.
 
-### 1. Open the Project
-Open this folder (`Assignment3`) in Visual Studio Code.
+### 1. Start the Codespace
 
-### 2. Create a Virtual Environment
-A virtual environment helps manage dependencies for this project separately from your system.
+1. Click the green **Code** button in the GitHub repository.
+2. Select the **Codespaces** tab.
+3. Click **Create codespace on main**.
 
-**Mac / Linux:**
-Open the terminal in VS Code (`Ctrl + ~`) and run:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+*The setup process will automatically create the virtual environment, install dependencies, and create your `.env` file.*
 
-**Windows:**
-Open the terminal in VS Code (`Ctrl + ~`) and run:
-```bash
-python -m venv venv
-.\venv\Scripts\activate
-```
-*You will know the virtual environment is active if you see `(venv)` at the start of your terminal line.*
+### 2. Configure API Keys
 
-### 3. Install Dependencies
-Install the required libraries listed in `requirements.txt`:
-```bash
-pip install -r requirements.txt
-```
+Once the Codespace is loaded:
 
----
-
-## ⚙️ Configuration
-
-The bot requires API keys to function. We use environment variables to keep these secure.
-
-1. **Create the `.env` file**:
-   Duplicate the `.env.example` file and rename the copy to `.env`.
-   
-   **Mac / Linux:**
-   ```bash
-   cp .env.example .env
-   ```
-
-   **Windows:**
-   ```bash
-   copy .env.example .env
-   ```
-
-2. **Add your API Keys**:
-   Open the newly created `.env` file and replace the placeholder text with your actual keys.
+1. Open the `.env` file in the file explorer.
+2. Add your API keys:
 
    ```ini
    DISCORD_BOT_TOKEN=your_actual_discord_token_here
    OPENAI_API_KEY=your_actual_openai_key_here
    ```
 
----
+### 3. Run the Bot
 
-## ▶️ Running the Bot
-
-Once everything is set up, verify your virtual environment is active `(venv)` and start the bot:
+In the terminal (automatically opened), run:
 
 ```bash
 python bot.py
 ```
 
-If successful, you will see a message:
-`Chatterly is online as [YourBotName]`
+---
+
+## Option 2: 🖥️ Running Locally (PC/Mac)
+
+Follow these steps to run the bot on your own computer.
+
+### 1. Prerequisites
+
+- **Python 3.8+**: [Download Here](https://www.python.org/downloads/)
+- **VS Code**: [Download Here](https://code.visualstudio.com/)
+
+### 2. Setup
+
+1. Open this folder in VS Code.
+2. Open the terminal (`Ctrl + ~` or `Cmd + ~`) and create a virtual environment:
+
+   **Mac / Linux:**
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+   **Windows:**
+
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### 3. Configuration
+
+1. Create the `.env` file:
+
+   **Mac / Linux:**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   **Windows:**
+
+   ```bash
+   copy .env.example .env
+   ```
+
+2. Open the `.env` file and add your keys:
+
+   ```ini
+   DISCORD_BOT_TOKEN=your_actual_discord_token_here
+   OPENAI_API_KEY=your_actual_openai_key_here
+   ```
+
+### 4. Run the Bot
+
+Make sure your virtual environment is active `(venv)` and run:
+
+```bash
+python bot.py
+```
 
 ---
 
 ## 🧠 Memory Feature
-The bot currently uses an **in-memory database**. This means:
-- It remembers conversations for each user individually.
-- If you stop or restart the script, **memory will be cleared**.
+
+The bot uses an **in-memory database**:
+
+- Conversations are remembered per user while the bot is running.
+- **Restarting the bot clears the memory.**
