@@ -19,11 +19,18 @@ Run the project instantly in the cloud. Codespaces automatically sets up the env
 2. Select the **Codespaces** tab.
 3. Click **Create codespace on main**.
 
-*The setup process will automatically create the virtual environment, install dependencies, and create your `.env` file.*
+> ⏳ **Please Wait!** The workspace will take 1-2 minutes to set up.  
+> Wait until you see the terminal open with `(venv)` prefix - this means the environment is ready.
+
+*The setup process will automatically:*
+
+- ✅ Create the virtual environment
+- ✅ Install all dependencies
+- ✅ Create your `.env` file
 
 ### 2. Configure API Keys
 
-Once the Codespace is loaded:
+Once the Codespace is loaded and you see `(venv)` in the terminal:
 
 1. Open the `.env` file in the file explorer.
 2. Add your API keys:
@@ -35,7 +42,7 @@ Once the Codespace is loaded:
 
 ### 3. Run the Bot
 
-In the terminal (automatically opened), run:
+In the terminal (with `(venv)` activated), run:
 
 ```bash
 python bot.py

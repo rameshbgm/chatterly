@@ -23,14 +23,21 @@ pip install -r requirements.txt
 if [ -f .env.example ] && [ ! -f .env ]; then
     echo "📝 Creating .env file from .env.example..."
     mv .env.example .env
-    echo "⚠️  Don't forget to add your API keys to .env!"
 fi
 
 # Add auto-activation to bashrc for new terminals
-if ! grep -q "source.*venv/bin/activate" ~/.bashrc 2>/dev/null; then
-    echo "source \$(pwd)/venv/bin/activate" >> ~/.bashrc
+ACTIVATE_CMD="cd /workspaces/chatterly && source venv/bin/activate"
+if ! grep -q "source venv/bin/activate" ~/.bashrc 2>/dev/null; then
+    echo "$ACTIVATE_CMD" >> ~/.bashrc
 fi
 
 echo ""
-echo "✅ Setup complete! Your environment is ready."
-echo "👉 Next step: Add your API keys to the .env file, then run: python bot.py"
+echo "=============================================="
+echo "✅ Setup complete!"
+echo "=============================================="
+echo ""
+echo "⚠️  IMPORTANT: Add your API keys to .env file"
+echo "👉 Then run: python bot.py"
+echo ""
+echo "🔄 Opening a new terminal with venv activated..."
+echo "=============================================="
