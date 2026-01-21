@@ -19,8 +19,7 @@ Run the project instantly in the cloud. Codespaces automatically sets up the env
 2. Select the **Codespaces** tab.
 3. Click **Create codespace on main**.
 
-> ⏳ **Please Wait!** The workspace will take 1-2 minutes to set up.  
-> Wait until you see the terminal open with `(venv)` prefix - this means the environment is ready.
+> ⏳ **Please Wait!** The workspace will take 1-2 minutes to set up.
 
 *The setup process will automatically:*
 
@@ -28,19 +27,39 @@ Run the project instantly in the cloud. Codespaces automatically sets up the env
 - ✅ Install all dependencies
 - ✅ Create your `.env` file
 
-### 2. Configure API Keys
+### 2. Open the Terminal
 
-Once the Codespace is loaded and you see `(venv)` in the terminal:
+Once the Codespace is loaded:
 
-1. Open the `.env` file in the file explorer.
-2. Add your API keys:
+1. **Open Terminal**: Click on **Terminal** menu → **New Terminal**, or press `` Ctrl + ` `` (backtick key).
+2. **Verify venv is active**: Look for `(venv)` at the beginning of the terminal line:
+
+   ```
+   (venv) @username → /workspaces/chatterly $
+   ```
+
+   If you see `(venv)`, the environment is ready! ✅
+
+### 3. Configure API Keys
+
+> ⚠️ **IMPORTANT: You must add your API keys before running the bot!**
+
+1. In the **file explorer** (left panel), click on the `.env` file to open it.
+2. **Replace the placeholder values** with your actual keys:
 
    ```ini
    DISCORD_BOT_TOKEN=your_actual_discord_token_here
    OPENAI_API_KEY=your_actual_openai_key_here
    ```
 
-### 3. Run the Bot
+   | Key | Where to get it |
+   |-----|-----------------|
+   | `DISCORD_BOT_TOKEN` | [Discord Developer Portal](https://discord.com/developers/applications) |
+   | `OPENAI_API_KEY` | [OpenAI API Keys](https://platform.openai.com/api-keys) |
+
+3. **Save the file** (`Ctrl + S` or `Cmd + S`).
+
+### 4. Run the Bot
 
 In the terminal (with `(venv)` activated), run:
 
