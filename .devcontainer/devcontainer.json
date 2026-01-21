@@ -1,14 +1,22 @@
 {
     "name": "Chatterly Dev Environment",
     "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
-    "postCreateCommand": "bash .devcontainer/setup.sh",
-    "postStartCommand": "source /workspaces/${localWorkspaceFolderBasename}/venv/bin/activate",
+    "onCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+    "postAttachCommand": "source venv/bin/activate",
     "customizations": {
         "vscode": {
             "settings": {
                 "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
                 "python.terminal.activateEnvironment": true,
-                "terminal.integrated.defaultProfile.linux": "bash"
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "args": [
+                            "-l"
+                        ]
+                    }
+                }
             },
             "extensions": [
                 "ms-python.python",
